@@ -1,0 +1,24 @@
+---
+declared-services:
+  wvb-watson-assistant:
+    label: conversation
+    plan: free
+  wvb-text-to-speech:
+    label: text_to_speech
+    plan: lite
+  wvb-speech-to-text:
+    label: speech_to_text
+    plan: lite
+
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  command: npm start
+  name: Property Sales Bot
+  disk_quota: 512M
+  random-route: false
+  services:
+  - wvb-watson-assistant
+  - wvb-text-to-speech
+  - wvb-speech-to-text
